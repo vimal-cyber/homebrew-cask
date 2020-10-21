@@ -1,0 +1,81 @@
+import java.util.LinkedHashSet;    
+public class Demo   
+{    
+    public static void main(String[] args)   
+    {    
+        LinkedHashSet<String> linkedset =   
+                           new LinkedHashSet<String>();    
+    
+        // Adding element to LinkedHashSet    
+        linkedset.add("A");    
+        linkedset.add("B");    
+        linkedset.add("C");    
+        linkedset.add("D");   
+    
+        // This will not add new element as A already exists   
+        linkedset.add("A");   
+        linkedset.add("E");    
+    
+        System.out.println("Size of LinkedHashSet = " +  
+                                    linkedset.size());    
+        System.out.println("Original LinkedHashSet:" + linkedset);    
+        System.out.println("Removing D from LinkedHashSet: " +  
+                            linkedset.remove("D"));    
+        System.out.println("Trying to Remove Z which is not "+  
+                            "present: " + linkedset.remove("Z"));    
+        System.out.println("Checking if A is present=" +   
+                            linkedset.contains("A"));  
+        System.out.println("Updated LinkedHashSet: " + linkedset);    
+    }    
+}    
+Output:
+Size of LinkedHashSet = 5
+Original LinkedHashSet:[A, B, C, D, E]
+Removing D from LinkedHashSet: true
+Trying to Remove Z which is not present: false
+Checking if A is present=true
+Updated LinkedHashSet: [A, B, C, E]
+With the help of TreeSet (Implements the SortedSet interface, Objects are stored in a sorted and ascending order).
+filter_none
+edit
+play_arrow
+
+brightness_4
+// Java program to demonstrate working of TreeSet 
+  
+import java.util.*;  
+    
+class TreeSetDemo {  
+    public static void main(String[] args)  
+    {  
+        TreeSet<String> ts1 = new TreeSet<String>();  
+    
+        // Elements are added using add() method  
+        ts1.add("A");  
+        ts1.add("B");  
+        ts1.add("C");  
+    
+        // Duplicates will not get insert  
+        ts1.add("C");  
+    
+        // Elements get stored in default natural  
+        // Sorting Order(Ascending)  
+        System.out.println("TreeSet: " + ts1);  
+  
+        // Checking if A is present or not 
+        System.out.println("\nTreeSet contains A or not:"
+                           + ts1.contains("A")); 
+  
+        // Removing items from TreeSet using remove() 
+        ts1.remove("A"); 
+  
+        // Printing the TreeSet 
+        System.out.println("\nTreeSet after removing A:" + ts1); 
+  
+        // Iterating over TreeSet items 
+        System.out.println("\nIterating over TreeSet:"); 
+        Iterator<String> i = ts1.iterator(); 
+        while (i.hasNext()) 
+            System.out.println(i.next()); 
+    } 
+} 
